@@ -1,0 +1,16 @@
+{
+  "name": "tencloudstatus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node app",
+    "release": "pkg app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tencentcloud-sdk-nodejs": "^4.0.139"
+  }
+}
