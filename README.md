@@ -12,7 +12,7 @@ node app.js
 > 开机自启 
 > 
 ```
-npm i pm2  #安装pm2工具
+npm i pm2 -g  #安装pm2工具
 
 pm2 start app.js
 pm2 save
