@@ -29,13 +29,13 @@ const getTrafficPackage = async () => {
     exec('poweroff', function (error, stdout, stderr) { });
   }
   else {
-    console.log(`总流量:${TrafficPackageTotal}`)
-    console.log(`已使用:${TrafficUsed}\t${TrafficUsed / TrafficPackageTotal}`)
-    console.log(`剩余量:${TrafficPackageRemaining}\t${TrafficPackageRemaining / TrafficPackageTotal}`)
+    console.clear();
+    console.log(`总流量:${(TrafficPackageTotal / 1024 / 1024 / 1024).toFixed(2)}GB\t查询时间:${new Date().toLocaleString()}`)
+    console.log(`已使用:${(TrafficUsed == 0 ? 0 : TrafficUsed / 1024 / 1024 / 1024).toFixed(2)}GB\t百分比:${(TrafficUsed / TrafficPackageTotal).toFixed(2)}%`)
+    console.log(`剩余量:${(TrafficPackageRemaining / 1024 / 1024 / 1024).toFixed(2)}GB\t百分比:${(TrafficPackageRemaining / TrafficPackageTotal).toFixed(2)}%`)
     setTimeout(() => {
       getTrafficPackage()
     }, 1000 * 60 * 10)//10分钟执行一次
   }
-
 }
 getTrafficPackage();
